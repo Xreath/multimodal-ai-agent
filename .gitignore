@@ -13,6 +13,9 @@ __pycache__/
 *.pth
 *.onnx
 
+# Secrets
+.env
+
 # IDE
 .vscode/
 .idea/

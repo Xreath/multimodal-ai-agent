@@ -1,0 +1,22 @@
+{
+  "answer": "Sahne, bir otobüs ve üç yüksek güvenilirlikli kişi içerir; düşük güvenilirlikli bir kişi ve bir dur işareti de tespit edilmiştir. Segmentasyon, bir kaykayın varlığını gösterir. OCR, 'cero' ve 'emisiones' gibi bazı yüksek güvenilirlikli metinler içerir.",
+  "reasoning_steps": [
+    "Step 1: Tespit edilen nesneleri analiz et: Otobüs (%87.3 güvenilirlik) ve üç kişi (%86.6, %85.3, %82.5 güvenilirlik) yüksek güvenilirlikle tespit edilmiştir. Düşük güvenilirlikli bir kişi (%26.1) ve bir dur işareti (%25.5) de mevcuttur.",
+    "Step 2: Segmentasyon verilerini incele: Otobüs ve kişiler için segmentasyon, tespitlerle uyumludur; ek olarak, düşük güvenilirlikli (%39.2) bir kaykay tespit edilmiştir.",
+    "Step 3: OCR metinlerini değerlendir: 'cero' (%93.4 güvenilirlik) ve 'emisiones' (%100 güvenilirlik) yüksek güvenilirlikli metinlerdir; diğer metinler düşük güvenilirliklidir ve anlamsız görünmektedir.",
+    "Step 4: Mekansal ilişkileri gözden geçir: Otobüs, görüntünün merkezinde yer alır; kişiler otobüsün etrafında dağılmıştır; dur işareti sol üst köşededir."
+  ],
+  "evidence": [
+    "Tespit: bus (87.3% güvenilirlik), person (86.6%, 85.3%, 82.5% güvenilirlik), person (26.1% güvenilirlik), stop sign (25.5% güvenilirlik)",
+    "Segmentasyon: skateboard (39.2% güvenilirlik, 2732px alan)",
+    "OCR: 'cero' (93.4% güvenilirlik), 'emisiones' (100% güvenilirlik)"
+  ],
+  "confidence": 0.85,
+  "follow_up_questions": [
+    "Düşük güvenilirlikli dur işareti ve kaykay gerçekten mevcut mu, yoksa yanlış tespit mi?",
+    "Otobüs ve kişiler arasındaki mekansal ilişkiler, bir güvenlik riski oluşturuyor mu?"
+  ],
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "strategy": "direct"
+}

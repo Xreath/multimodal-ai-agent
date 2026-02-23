@@ -1,0 +1,229 @@
+{
+  "image_path": "data/sample_images/bus.jpg",
+  "model": "yolov8m / yolov8m-seg",
+  "image_info": {
+    "width": 810,
+    "height": 1080,
+    "channels": 3,
+    "dtype": "uint8",
+    "size_mb": 2.5
+  },
+  "objects": [
+    {
+      "label": "bus",
+      "confidence": 0.9565,
+      "bbox": [
+        1,
+        231,
+        805,
+        738
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.9284,
+      "bbox": [
+        50,
+        400,
+        248,
+        905
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.922,
+      "bbox": [
+        669,
+        395,
+        810,
+        880
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.9005,
+      "bbox": [
+        223,
+        411,
+        345,
+        860
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.7517,
+      "bbox": [
+        0,
+        549,
+        78,
+        872
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "label": "person",
+      "confidence": 0.933,
+      "bbox": [
+        670,
+        395,
+        810,
+        880
+      ],
+      "area_pixels": 23801
+    },
+    {
+      "label": "bus",
+      "confidence": 0.9224,
+      "bbox": [
+        8,
+        230,
+        803,
+        738
+      ],
+      "area_pixels": 264098
+    },
+    {
+      "label": "person",
+      "confidence": 0.9096,
+      "bbox": [
+        50,
+        399,
+        246,
+        905
+      ],
+      "area_pixels": 52705
+    },
+    {
+      "label": "person",
+      "confidence": 0.8885,
+      "bbox": [
+        223,
+        400,
+        345,
+        860
+      ],
+      "area_pixels": 35990
+    },
+    {
+      "label": "person",
+      "confidence": 0.5795,
+      "bbox": [
+        0,
+        551,
+        75,
+        872
+      ],
+      "area_pixels": 12628
+    },
+    {
+      "label": "tie",
+      "confidence": 0.2888,
+      "bbox": [
+        137,
+        472,
+        149,
+        504
+      ],
+      "area_pixels": 637
+    }
+  ],
+  "text_regions": [
+    {
+      "text": "MABRiD",
+      "confidence": 0.0381,
+      "bbox": [
+        439,
+        329,
+        479,
+        349
+      ]
+    },
+    {
+      "text": "Lu miuils WI \" clicuricu `v Ulau",
+      "confidence": 0.0171,
+      "bbox": [
+        561,
+        333,
+        729,
+        351
+      ]
+    },
+    {
+      "text": "{mTuD",
+      "confidence": 0.0166,
+      "bbox": [
+        408,
+        436,
+        464,
+        464
+      ]
+    },
+    {
+      "text": "clactriedmEMie",
+      "confidence": 0.2133,
+      "bbox": [
+        630,
+        430,
+        744,
+        456
+      ]
+    },
+    {
+      "text": "A10",
+      "confidence": 0.2188,
+      "bbox": [
+        334,
+        544,
+        366,
+        570
+      ]
+    },
+    {
+      "text": "cero",
+      "confidence": 0.9343,
+      "bbox": [
+        557,
+        547,
+        619,
+        585
+      ]
+    },
+    {
+      "text": "2)",
+      "confidence": 0.6846,
+      "bbox": [
+        369,
+        531,
+        509,
+        671
+      ]
+    },
+    {
+      "text": "'MHIL uLA",
+      "confidence": 0.027,
+      "bbox": [
+        31,
+        320,
+        154,
+        375
+      ]
+    },
+    {
+      "text": "emisiones",
+      "confidence": 0.9997,
+      "bbox": [
+        550,
+        562,
+        685,
+        622
+      ]
+    }
+  ],
+  "processing_time": {
+    "detection": 0.217,
+    "segmentation": 0.479,
+    "ocr": 1.036,
+    "total": 1.733
+  }
+}
