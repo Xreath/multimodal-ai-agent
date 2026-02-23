@@ -1,0 +1,239 @@
+{
+  "image_path": "data/sample_images/bus.jpg",
+  "image_info": {
+    "width": 810,
+    "height": 1080,
+    "channels": 3,
+    "dtype": "uint8",
+    "size_mb": 2.5
+  },
+  "objects": [
+    {
+      "label": "bus",
+      "confidence": 0.8734,
+      "bbox": [
+        23,
+        231,
+        805,
+        757
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.8657,
+      "bbox": [
+        49,
+        399,
+        245,
+        903
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.8528,
+      "bbox": [
+        669,
+        392,
+        810,
+        877
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.8252,
+      "bbox": [
+        222,
+        406,
+        345,
+        858
+      ]
+    },
+    {
+      "label": "person",
+      "confidence": 0.2611,
+      "bbox": [
+        0,
+        551,
+        63,
+        873
+      ]
+    },
+    {
+      "label": "stop sign",
+      "confidence": 0.2551,
+      "bbox": [
+        0,
+        254,
+        33,
+        325
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "label": "person",
+      "confidence": 0.8778,
+      "bbox": [
+        670,
+        389,
+        810,
+        877
+      ],
+      "area_pixels": 21868
+    },
+    {
+      "label": "person",
+      "confidence": 0.8602,
+      "bbox": [
+        48,
+        396,
+        242,
+        904
+      ],
+      "area_pixels": 51997
+    },
+    {
+      "label": "person",
+      "confidence": 0.8412,
+      "bbox": [
+        223,
+        408,
+        344,
+        862
+      ],
+      "area_pixels": 35229
+    },
+    {
+      "label": "bus",
+      "confidence": 0.8382,
+      "bbox": [
+        3,
+        228,
+        800,
+        722
+      ],
+      "area_pixels": 261259
+    },
+    {
+      "label": "person",
+      "confidence": 0.4119,
+      "bbox": [
+        0,
+        552,
+        78,
+        876
+      ],
+      "area_pixels": 12612
+    },
+    {
+      "label": "skateboard",
+      "confidence": 0.392,
+      "bbox": [
+        669,
+        823,
+        810,
+        882
+      ],
+      "area_pixels": 2732
+    }
+  ],
+  "text_regions": [
+    {
+      "text": "MABRiD",
+      "confidence": 0.0381,
+      "bbox": [
+        439,
+        329,
+        479,
+        349
+      ]
+    },
+    {
+      "text": "Lu miuils WI \" clicuricu `v Ulau",
+      "confidence": 0.0171,
+      "bbox": [
+        561,
+        333,
+        729,
+        351
+      ]
+    },
+    {
+      "text": "{mTuD",
+      "confidence": 0.0166,
+      "bbox": [
+        408,
+        436,
+        464,
+        464
+      ]
+    },
+    {
+      "text": "clactriedmEMie",
+      "confidence": 0.2133,
+      "bbox": [
+        630,
+        430,
+        744,
+        456
+      ]
+    },
+    {
+      "text": "A10",
+      "confidence": 0.2188,
+      "bbox": [
+        334,
+        544,
+        366,
+        570
+      ]
+    },
+    {
+      "text": "cero",
+      "confidence": 0.9343,
+      "bbox": [
+        557,
+        547,
+        619,
+        585
+      ]
+    },
+    {
+      "text": "2)",
+      "confidence": 0.6846,
+      "bbox": [
+        369,
+        531,
+        509,
+        671
+      ]
+    },
+    {
+      "text": "'MHIL uLA",
+      "confidence": 0.027,
+      "bbox": [
+        31,
+        320,
+        154,
+        375
+      ]
+    },
+    {
+      "text": "emisiones",
+      "confidence": 0.9997,
+      "bbox": [
+        550,
+        562,
+        685,
+        622
+      ]
+    }
+  ],
+  "scene_description": "Detected: 1 bus, 4 persons, 1 stop sign. Text found: MABRiD, Lu miuils WI \" clicuricu `v Ulau, {mTuD, clactriedmEMie, A10. 6 segmented regions",
+  "processing_time": {
+    "detection": 0.163,
+    "segmentation": 0.08,
+    "ocr": 3.941,
+    "total": 4.189
+  }
+}

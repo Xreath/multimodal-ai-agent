@@ -1,0 +1,6 @@
+# Project 1: CV Pipeline - Visual Perception Engine
+ultralytics>=8.0.0       # YOLOv8 object detection & segmentation
+easyocr>=1.7.0           # OCR text extraction
+opencv-python>=4.8.0     # Image processing
+numpy>=1.24.0            # Array operations
+Pillow>=10.0.0           # Image I/O
