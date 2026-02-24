@@ -23,4 +23,6 @@ __pycache__/
 # OS
 .DS_Store
 
-
+# Output and data directories
+**/output/
+**/data/memory*/

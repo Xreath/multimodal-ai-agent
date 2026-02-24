@@ -55,11 +55,37 @@
   - project2_llm_integration/output/reasoning_result.json
 
 ### Phase 3: Agent Architecture — "Multi-Modal Agent"
-- **Status:** pending
+- **Status:** in_progress
+- **Started:** 2026-02-24
 - Actions taken:
-  -
+  - Proje yapısı oluşturuldu (src/, output/, data/)
+  - AgentState tanımlandı (TypedDict + Annotated reducer'lar)
+  - 6 Node yazıldı: planner, router, vision, reasoner, evaluator, respond + human_approval
+  - LangGraph StateGraph build & compile (graph.py)
+  - Memory sistemi: ConversationMemory (short-term) + VectorMemory (ChromaDB, long-term)
+  - MemoryManager: birleşik hafıza yönetici (RAG-style context oluşturma)
+  - run_agent.py CLI: 5 mod (analyze, ask, interactive, graph, memory-demo)
+  - Graph visualization: Mermaid diagram çıktısı ✓
+  - Memory demo: ChromaDB + semantic search ✓ (4 örnek analiz, doğru retrieval)
+  - INTERVIEW_NOTES.md: 11 mülakat konusu (LangGraph, ReAct, memory, MCP, vb.)
+  - Voice AI: WhisperASR (base model) + EdgeTTS (tr/en sesleri) + VoiceAssistant
+  - run_agent.py'ye 3 yeni mod eklendi: tts, asr, voice (tam pipeline)
+  - TTS testi: Türkçe + İngilizce ses dosyası üretimi ✓
+  - ASR testi: TTS çıktısını Whisper ile metin'e çevirme (round-trip) ✓
+  - Voice pipeline testi: Ses → Whisper → Agent → TTS → Ses (tam akış) ✓
+  - INTERVIEW_NOTES.md: Voice AI bölümü eklendi (Whisper mimarisi, mel spectrogram, latency opt.)
 - Files created/modified:
-  -
+  - project3_agent_architecture/requirements.txt
+  - project3_agent_architecture/.env.example
+  - project3_agent_architecture/src/__init__.py
+  - project3_agent_architecture/src/state.py — AgentState TypedDict
+  - project3_agent_architecture/src/nodes.py — 7 node (planner, router, vision, reasoner, evaluator, respond, human_approval)
+  - project3_agent_architecture/src/graph.py — LangGraph StateGraph build & compile
+  - project3_agent_architecture/src/memory.py — ConversationMemory + VectorMemory + MemoryManager
+  - project3_agent_architecture/run_agent.py — CLI (5 mod)
+  - project3_agent_architecture/INTERVIEW_NOTES.md — 11 mülakat konusu
+  - project3_agent_architecture/output/graph.mmd — Mermaid diagram
+  - project3_agent_architecture/src/voice.py — WhisperASR + EdgeTTS + VoiceAssistant
 
 ### Phase 4: Fine-tuning Lab
 - **Status:** pending
@@ -96,6 +122,15 @@
 | DeepSeek CoT Analiz | CV result + soru | Structured JSON cevap | Doğru analiz, 5 reasoning step | PASS |
 | Multi-turn Follow-up | Takip sorusu | Önceki context korunmalı | Otobüs alanı doğru hesaplandı (261K px, %30) | PASS |
 | CLI Direct Strategy | --cv-result + --question | JSON çıktı | output/reasoning_result.json kaydedildi | PASS |
+| Agent Graph Viz | graph komutu | Mermaid diagram | 7 node, conditional edges görüntülendi | PASS |
+| Agent Memory Demo | memory-demo | Semantic search | 4 analiz kaydedildi, doğru retrieval (güvenlik→depo, trafik→kamera) | PASS |
+| Agent Ask (no image) | ask -q "detection vs tracking" | Structured cevap | Planner→Router→Reasoner→Evaluator(0.90)→Respond | PASS |
+| Agent Analyze (image) | analyze -i bus.jpg -q "araçlar?" | CV+LLM cevap | Vision(6 obj)→Reasoner→Evaluator(0.90)→Respond "1 otobüs" | PASS |
+| TTS Türkçe | tts --text "Merhaba..." | .mp3 dosya | tr-TR-EmelNeural, 6s, output/tts_output.mp3 | PASS |
+| TTS İngilizce | tts --text "I detected..." --voice en_female | .mp3 dosya | en-US-JennyNeural, output/tts_english.mp3 | PASS |
+| ASR Round-trip | asr --audio tts_output.mp3 | Transkript | "Merhaba ben bir multimodal..." (base model, bazı typo'lar normal) | PASS |
+| ASR İngilizce | asr --audio tts_english.mp3 | Transkript | "...three vehicles and two safety violations..." | PASS |
+| Voice Pipeline | voice --audio tts_output.mp3 | Ses→Agent→Ses | ASR→Planner→Reasoner→Evaluator(0.90)→TTS→voice_response.mp3 | PASS |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
@@ -105,11 +140,11 @@
 ## 5-Question Reboot Check
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase 2 TAMAMLANDI — kullanıcı çalışacak, sonra Phase 3 |
-| Where am I going? | 5 faz kaldı: Agent → Fine-tune → Video → Deploy → Mock |
+| Where am I? | Phase 3 IN PROGRESS — Agent Architecture yapısı hazır, LLM test bekliyor |
+| Where am I going? | 4 faz kaldı: Fine-tune → Video → Deploy → Mock |
 | What's the goal? | Efsora Senior AI Engineer mülakatına proje bazlı hazırlanmak |
-| What have I learned? | + LLM API'ları, prompt engineering, function calling, multi-turn, DeepSeek MoE |
-| What have I done? | CV pipeline + LLM integration + mülakat notları (2 proje tamamlandı) |
+| What have I learned? | + LangGraph, StateGraph, conditional routing, agent patterns (ReAct/Plan-Execute/Reflection), vector memory (ChromaDB), RAG |
+| What have I done? | CV pipeline + LLM integration + Agent Architecture (3 proje, graph + memory çalışıyor) |
 
 ---
 *Update after completing each phase or encountering errors*

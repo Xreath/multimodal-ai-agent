@@ -4,7 +4,7 @@
 plan.md'deki 6 projeyi + mock interview'u sırasıyla uygulayarak Efsora Senior AI Engineer pozisyonuna tam hazırlanmak.
 
 ## Current Phase
-Phase 2 — LLM Entegrasyonu: "Visual Reasoner" (**COMPLETE** — kullanıcı çalışması bekleniyor, sonra Phase 3'e geçilecek)
+Phase 3 — Agent Architecture: "Multi-Modal Agent" (**IN PROGRESS**)
 
 ## Phases
 
@@ -28,15 +28,19 @@ Phase 2 — LLM Entegrasyonu: "Visual Reasoner" (**COMPLETE** — kullanıcı ç
 - **Status:** complete — kullanıcı çalışacak, sonra Phase 3
 
 ### Phase 3: Agent Architecture — "Multi-Modal Agent" + Voice AI (4-5 gün)
-- [ ] LangGraph ile agent loop (Plan → Observe → Reason → Act → Evaluate)
-- [ ] Tool registry (CV pipeline, web search, calculator, file ops)
-- [ ] Memory: short-term + long-term (vector store)
-- [ ] Multi-step reasoning planner
-- [ ] Human-in-the-loop onay mekanizması
-- [ ] MCP (Model Context Protocol) entegrasyonu
-- [ ] **Voice AI:** Whisper (ASR) + Edge-TTS/OpenAI TTS tool'ları
-- [ ] Mülakat sorularını çalış (+ Whisper mimarisi, mel spectrogram, real-time latency, ASR karşılaştırma)
-- **Status:** pending
+- [ ] **3.1** Proje yapısı + LangGraph kurulumu
+- [ ] **3.2** AgentState tanımı — TypedDict ile graph state
+- [ ] **3.3** Planner Node — LLM kullanıcı isteğini adımlara böler
+- [ ] **3.4** Router Node — conditional edges ile doğru tool'a yönlendir
+- [ ] **3.5** Vision Node — CV pipeline'ı LangGraph node olarak entegre et
+- [ ] **3.6** Reasoner Node — tool sonuçlarını sentezle, final cevap üret
+- [ ] **3.7** Evaluator Node — cevap kalitesini değerlendir, gerekirse loop back
+- [ ] **3.8** Memory: short-term (conversation buffer) + long-term (ChromaDB vector store)
+- [ ] **3.9** Human-in-the-loop — kritik kararlarda onay mekanizması (interrupt_before)
+- [ ] **3.10** Voice AI: Whisper (ASR) + Edge-TTS tool'ları
+- [ ] **3.11** run_agent.py CLI + demo senaryoları
+- [ ] **3.12** INTERVIEW_NOTES.md — LangGraph, ReAct, memory, MCP mülakat notları
+- **Status:** in_progress
 
 ### Phase 4: Fine-tuning Lab (3-4 gün)
 - [ ] **CV:** Custom dataset hazırlama + YOLOv8 fine-tune

@@ -44,6 +44,17 @@
 - project1_cv_pipeline/INTERVIEW_NOTES.md — CV mülakat notları
 - project2_llm_integration/INTERVIEW_NOTES.md — LLM mülakat notları
 
+### Phase 3: Agent Architecture (LangGraph)
+- LangGraph StateGraph: TypedDict state + reducer'lar (operator.add) ile birikimli veri
+- Agent pattern: Plan-and-Execute + ReAct + Reflection üçlüsünü birleştirdik
+- Conditional edges: router fonksiyonu string döner → mapping ile node'a yönlendirir
+- Infinite loop koruması: max_iterations + evaluator auto-pass + timeout
+- ChromaDB semantic search: all-MiniLM-L6-v2 embedding, cosine distance
+- Memory tipleri: short-term (conversation buffer, sliding window) + long-term (vector store, RAG)
+- Project arası import: importlib.util.spec_from_file_location (src/ namespace çakışması çözümü)
+- LangGraph compile: graph.compile() → çalıştırılabilir, .invoke() ile baştan sona çalıştır
+- Graph visualization: graph.get_graph().draw_mermaid() → Mermaid diagram otomatik
+
 ## Visual/Browser Findings
 -
 
