@@ -1,0 +1,14 @@
+artifact_uri: /Users/fazlikoc/Desktop/Projects/multimodal-ai-agent/project4_finetuning_lab/runs/mlflow/530644761755783905/bad8e783f4d94472b48e33992cd668e1/artifacts
+end_time: 1772064130149
+entry_point_name: ''
+experiment_id: '530644761755783905'
+lifecycle_stage: active
+run_id: bad8e783f4d94472b48e33992cd668e1
+run_name: safety_detection
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772064082156
+status: 3
+tags: []
+user_id: fazlikoc

@@ -4,7 +4,7 @@
 plan.md'deki 6 projeyi + mock interview'u sırasıyla uygulayarak Efsora Senior AI Engineer pozisyonuna tam hazırlanmak.
 
 ## Current Phase
-Phase 3 — Agent Architecture: "Multi-Modal Agent" (**IN PROGRESS**)
+Phase 4 — Fine-tuning Lab (**IN PROGRESS**)
 
 ## Phases
 
@@ -28,28 +28,33 @@ Phase 3 — Agent Architecture: "Multi-Modal Agent" (**IN PROGRESS**)
 - **Status:** complete — kullanıcı çalışacak, sonra Phase 3
 
 ### Phase 3: Agent Architecture — "Multi-Modal Agent" + Voice AI (4-5 gün)
-- [ ] **3.1** Proje yapısı + LangGraph kurulumu
-- [ ] **3.2** AgentState tanımı — TypedDict ile graph state
-- [ ] **3.3** Planner Node — LLM kullanıcı isteğini adımlara böler
-- [ ] **3.4** Router Node — conditional edges ile doğru tool'a yönlendir
-- [ ] **3.5** Vision Node — CV pipeline'ı LangGraph node olarak entegre et
-- [ ] **3.6** Reasoner Node — tool sonuçlarını sentezle, final cevap üret
-- [ ] **3.7** Evaluator Node — cevap kalitesini değerlendir, gerekirse loop back
-- [ ] **3.8** Memory: short-term (conversation buffer) + long-term (ChromaDB vector store)
-- [ ] **3.9** Human-in-the-loop — kritik kararlarda onay mekanizması (interrupt_before)
-- [ ] **3.10** Voice AI: Whisper (ASR) + Edge-TTS tool'ları
-- [ ] **3.11** run_agent.py CLI + demo senaryoları
-- [ ] **3.12** INTERVIEW_NOTES.md — LangGraph, ReAct, memory, MCP mülakat notları
-- **Status:** in_progress
+- [x] **3.1** Proje yapısı + LangGraph kurulumu
+- [x] **3.2** AgentState tanımı — TypedDict ile graph state
+- [x] **3.3** Planner Node — LLM kullanıcı isteğini adımlara böler
+- [x] **3.4** Router Node — conditional edges ile doğru tool'a yönlendir
+- [x] **3.5** Vision Node — CV pipeline'ı LangGraph node olarak entegre et
+- [x] **3.6** Reasoner Node — tool sonuçlarını sentezle, final cevap üret
+- [x] **3.7** Evaluator Node — cevap kalitesini değerlendir, gerekirse loop back
+- [x] **3.8** Memory: short-term (conversation buffer) + long-term (ChromaDB vector store)
+- [x] **3.9** Human-in-the-loop — kritik kararlarda onay mekanizması (interrupt_before)
+- [x] **3.10** Voice AI: Whisper (ASR) + Edge-TTS tool'ları
+- [x] **3.11** run_agent.py CLI + demo senaryoları (analyze, ask, interactive, tts, asr, voice, graph, memory-demo)
+- [x] **3.12** INTERVIEW_NOTES.md — LangGraph, ReAct, memory, MCP, Voice AI mülakat notları (11 konu)
+- **Status:** complete ✅ (2026-02-24)
 
 ### Phase 4: Fine-tuning Lab (3-4 gün)
-- [ ] **CV:** Custom dataset hazırlama + YOLOv8 fine-tune
-- [ ] **CV:** Transfer learning stratejileri
-- [ ] **LLM:** LoRA/QLoRA ile model fine-tune (Mistral/Llama)
-- [ ] **LLM:** HuggingFace Transformers + PEFT + bitsandbytes
-- [ ] Evaluation: perplexity, task-specific metrics
-- [ ] Mülakat sorularını çalış
-- **Status:** pending
+- [ ] **4.1** Proje yapısı + requirements kurulumu
+- [ ] **4.2** CV Part A: Custom dataset hazırlama (YOLO format, augmentation)
+- [ ] **4.3** CV Part A: YOLOv8 fine-tune (güvenlik ekipmanı tespiti — hardhat/vest)
+- [ ] **4.4** CV Part A: Transfer learning stratejileri (freeze, LR scheduling, early stopping)
+- [ ] **4.5** CV Part A: Evaluation (mAP, precision, recall, confusion matrix)
+- [ ] **4.6** LLM Part B: Instruction dataset hazırlama (visual reasoning format)
+- [ ] **4.7** LLM Part B: LoRA/QLoRA fine-tune (PEFT + bitsandbytes)
+- [ ] **4.8** LLM Part B: Training loop (gradient accumulation, warmup, checkpointing)
+- [ ] **4.9** LLM Part B: Evaluation (perplexity, task-specific accuracy)
+- [ ] **4.10** run_finetuning.py CLI + demo senaryoları
+- [ ] **4.11** INTERVIEW_NOTES.md — LoRA, QLoRA, quantization, transfer learning mülakat notları
+- **Status:** in_progress
 
 ### Phase 5: Video Analytics Pipeline (3-4 gün)
 - [ ] Frame extraction + keyframe detection

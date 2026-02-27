@@ -15,9 +15,9 @@ This is a multi-modal AI agent training project for Efsora Senior AI Engineer in
 
 ## Development Commands
 
-### CV Pipeline (Project 1)
+### CV Pipeline
 ```bash
-cd project1_cv_pipeline
+cd cv_pipeline
 python run_pipeline.py <image_path> [options]
 ```
 Options:
@@ -29,9 +29,9 @@ Options:
 - `--include-masks`: Include base64 mask data in JSON
 - `--max-size <int>`: Max image dimension (default: 1280)
 
-### LLM Visual Reasoner (Project 2)
+### LLM Visual Reasoner
 ```bash
-cd project2_llm_integration
+cd llm_integration
 python run_reasoner.py <mode> [options]
 ```
 Modes: `standard`, `tools`, `compare`, `safety`, `interactive`
@@ -43,7 +43,7 @@ Key options:
 
 ## Architecture
 
-### Project 1: CV Pipeline (`project1_cv_pipeline/`)
+### CV Pipeline (`cv_pipeline/`)
 
 **Entry Point**: `run_pipeline.py` → `src/pipeline.py:VisualPerceptionPipeline`
 
@@ -67,7 +67,7 @@ Output format:
 }
 ```
 
-### Project 2: LLM Integration (`project2_llm_integration/`)
+### LLM Integration (`llm_integration/`)
 
 **Entry Point**: `run_reasoner.py` → `src/visual_reasoner.py:VisualReasoner`
 
@@ -89,14 +89,14 @@ Core modules:
 - Tool calling (OpenAI vs Anthropic format)
 - Multi-modal (image) input handling
 
-### Project 3: Agent Architecture (`project3_agent_architecture/`)
+### Agent Architecture (`agent_architecture/`)
 
 **Entry Point**: `run_agent.py` → `src/graph.py:build_agent_graph()`
 
 LangGraph-based multi-modal agent with Plan-Execute-Reflect pattern:
 1. Planner node breaks user query into steps
 2. Router conditionally routes to vision/reason/respond
-3. Vision node runs CV pipeline (project1)
+3. Vision node runs CV pipeline
 4. Reasoner node synthesizes results with LLM
 5. Evaluator node scores answer quality → loop back if low
 6. Memory: short-term (conversation buffer) + long-term (ChromaDB vector store)
@@ -126,12 +126,12 @@ conda activate interview-study
 # Dependencies are installed across all projects in this env
 
 # For a new project, install its requirements:
-cd project3_agent_architecture
+cd agent_architecture
 pip install -r requirements.txt
 cp .env.example .env  # Edit .env with API keys
 ```
 
-Required API keys (set in `project2_llm_integration/.env`):
+Required API keys (set in `llm_integration/.env`):
 - `DEEPSEEK_API_KEY` (default provider, cheapest)
 - `OPENAI_API_KEY` (optional)
 - `ANTHROPIC_API_KEY` (optional)
@@ -146,7 +146,7 @@ Current test results (from `progress.md`):
 
 ## Project Progress Tracking
 
-- `plan.md` - Full 6-phase project plan (Turkish language)
+- `plan.md` - Full 6-phase project plan (Private)
 - `task_plan.md` - Detailed task breakdown
 - `findings.md` - Research findings and notes
 - `progress.md` - Phase completion status and test results
@@ -154,7 +154,7 @@ Current test results (from `progress.md`):
 
 ## Important Notes
 
-1. **Language**: Project documentation uses Turkish (plan.md, task_plan.md), but code comments are English
+1. **Language**: Development and private planning docs are in Turkish, but all code, comments, and public documentation are in English to be ready for GitHub.
 2. **Model Downloads**: YOLOv8 models download automatically on first run (yolov8n.pt, yolov8n-seg.pt)
-3. **Output Directory**: JSON outputs go to `project*/output/` directories
+3. **Output Directory**: JSON outputs go to `*/output/` directories
 4. **DeepSeek vs Others**: DeepSeek V3 is the default LLM provider due to cost efficiency (~$0.27/1M input tokens)

@@ -1,0 +1,31 @@
+# LangGraph — Agent orchestration framework (LangChain ekosistemi)
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+
+# LLM Providers
+openai>=1.0.0
+anthropic>=0.30.0
+google-generativeai>=0.8.0
+
+# Memory — Vector store (long-term memory)
+chromadb>=0.5.0
+
+# Embedding model (ChromaDB için)
+sentence-transformers>=3.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Pydantic — structured data
+pydantic>=2.0.0
+
+# Voice AI (optional)
+# openai-whisper>=20231117  # ASR — büyük model, opsiyonel
+# edge-tts>=6.1.0          # TTS — Microsoft Edge TTS
+
+# Web Search (Search Node) — duckduckgo-search paketi ddgs olarak yeniden adlandırıldı
+ddgs>=9.0.0
+
+# CV Pipeline bağımlılıkları (project1'den)
+# ultralytics, easyocr, opencv-python → project1'de kurulu

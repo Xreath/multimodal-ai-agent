@@ -1,0 +1,73 @@
+# LLM Fine-tuning Configuration (LoRA/QLoRA)
+# Task: Visual reasoning instruction-following
+
+model:
+  name: TinyLlama/TinyLlama-1.1B-Chat-v1.0   # small model for demo
+  # Production alternatives:
+  # - mistralai/Mistral-7B-Instruct-v0.3
+  # - meta-llama/Llama-3.1-8B-Instruct
+  # - Qwen/Qwen2.5-7B-Instruct
+  max_length: 512
+  device_map: auto          # auto placement (mps or cuda)
+
+lora:
+  r: 16                     # LoRA rank (4, 8, 16, 32, 64)
+  alpha: 32                 # LoRA alpha (typically 2x rank)
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - v_proj
+    - k_proj
+    - o_proj
+    # - gate_proj           # optional: include MLP layers
+    # - up_proj
+    # - down_proj
+  bias: none                # none, all, lora_only
+  task_type: CAUSAL_LM
+
+quantization:
+  # QLoRA settings (CUDA only — bitsandbytes)
+  enabled: false            # set true on CUDA machines
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_quant_type: nf4  # nf4 (normalized float4) or fp4
+  bnb_4bit_use_double_quant: true
+
+training:
+  epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4   # effective batch = 16
+  learning_rate: 0.0002
+  warmup_ratio: 0.03
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  lr_scheduler_type: cosine
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 50
+  fp16: false               # true on CUDA
+  bf16: false               # true on Ampere+ GPUs
+
+dataset:
+  path: data/llm/visual_reasoning_instructions.json
+  train_split: 0.85
+  val_split: 0.15
+  template: |
+    <|system|>
+    You are a visual reasoning assistant that analyzes CV pipeline outputs.
+    </s>
+    <|user|>
+    {instruction}
+    </s>
+    <|assistant|>
+    {response}
+    </s>
+
+evaluation:
+  metrics:
+    - eval_loss
+    - perplexity
+  generate:
+    max_new_tokens: 256
+    temperature: 0.7
+    top_p: 0.9

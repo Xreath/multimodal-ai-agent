@@ -26,3 +26,13 @@ __pycache__/
 # Output and data directories
 **/output/
 **/data/memory*/
+finetuning_lab/data/
+
+# Private notes
+INTERVIEW_NOTES.md
+STUDY_GUIDE.md
+task_plan.md
+progress.md
+plan.md
+findings.md
+

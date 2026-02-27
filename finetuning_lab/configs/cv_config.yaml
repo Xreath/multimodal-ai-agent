@@ -1,0 +1,54 @@
+# YOLOv8 Fine-tuning Configuration
+# Domain: Safety Equipment Detection (hardhat, vest, no-hardhat, no-vest)
+
+model:
+  base: yolov8n.pt          # nano model for fast training
+  task: detect
+
+dataset:
+  path: data/cv/safety       # auto-generated synthetic dataset
+  classes:
+    - hardhat
+    - no-hardhat
+    - vest
+    - no-vest
+    - person
+  num_classes: 5
+
+training:
+  epochs: 50
+  batch_size: 16
+  imgsz: 640
+  patience: 10              # early stopping patience
+  optimizer: AdamW
+  lr0: 0.001                # initial learning rate
+  lrf: 0.01                 # final learning rate factor
+  warmup_epochs: 3
+  weight_decay: 0.0005
+  device: mps               # Apple Silicon; change to 0 for CUDA GPU
+
+augmentation:
+  hsv_h: 0.015              # hue augmentation
+  hsv_s: 0.7                # saturation
+  hsv_v: 0.4                # value/brightness
+  degrees: 10               # rotation
+  translate: 0.1
+  scale: 0.5
+  fliplr: 0.5               # horizontal flip
+  mosaic: 1.0               # mosaic augmentation
+  mixup: 0.1
+
+freeze:
+  layers: 10                # freeze first N layers for transfer learning
+  # 0 = train all (full fine-tune)
+  # 10 = freeze backbone (feature extraction)
+  # -1 = freeze all except head
+
+evaluation:
+  conf_threshold: 0.25
+  iou_threshold: 0.5
+  metrics:
+    - mAP50
+    - mAP50-95
+    - precision
+    - recall
